@@ -1,0 +1,17 @@
+.title{
+    font-size: 32px;
+    font-family: "Merriweather", "Georgia", serif;
+    color: #155724;
+    text-align: center;
+    position: relative;
+    top: 50px;
+}
+
+.inputField{
+    height: 36px;
+    border-radius: 5px;
+}
+
+.form-widget{
+    text-align: center;
+}

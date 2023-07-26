@@ -1,0 +1,16 @@
+<h1 class="title">My Trunk of Quotes</h1>
+<div class="container" style="width: 25vw; margin-top: 100px;">
+  <form [formGroup]="signInForm" (ngSubmit)="onSubmit()" class="form-widget">
+    <p>Enter your email to get the link in your mailbox</p>
+    <input
+    id="email"
+    formControlName="email"
+    class="inputField"
+    type="email"
+    placeholder="Your email"
+  />
+    <button type="button" type="submit" class="btn btn-outline-success">Submit</button>
+    
+  </form>
+
+</div>
