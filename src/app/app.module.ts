@@ -35,7 +35,7 @@ const appRoutes:Routes=[
     QuotesComponent,
     NewQuoteComponent,
     CommunityComponent,
-    AboutComponent
+    AboutComponent,
   ],
   imports: [
     BrowserModule,

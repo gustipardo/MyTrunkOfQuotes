@@ -20,6 +20,7 @@ export interface Quotes {
   id?: string
   Description: string
   Author: string
+  Color: string
 }
 
 @Injectable({
@@ -55,14 +56,14 @@ export class SupabaseService {
   quotes(user: User){
     return this.supabase
       .from('Quotes')
-      .select(`id, Description, Author`)
+      .select(`id, Description, Author, Color`)
       .eq('id_user', user.id)
   }
 
   allQuotes(){
     return this.supabase
       .from('Quotes')
-      .select(`Description, Author`)
+      .select(`Description, Author, Color`)
   }
 
   async deleteQuote(Quote_id:string){
@@ -79,12 +80,12 @@ export class SupabaseService {
     }
   }
   
-  async updateQuote(Quote_id:string, Description:string, Author:String){
+  async updateQuote(Quote_id:string, Description:string, Author:String, Color:string){
     try{
       console.log("edit")
     const { error } = await this.supabase
     .from('Quotes')
-    .update({ Description: Description, Author: Author })
+    .update({ Description: Description, Author: Author, Color })
     .eq('id', Quote_id)
     if (error) {
       throw error;
@@ -94,10 +95,10 @@ export class SupabaseService {
     }
   }
   
-  async createQuote(description: string, author: string, user: User): Promise<void> {
+  async createQuote(description: string, author: string, Color:string, user: User): Promise<void> {
     try {
       const { error } = await this.supabase.from('Quotes').insert([
-        { Description: description, Author: author, id_user: user.id }
+        { Description: description, Author: author, Color: Color, id_user: user.id }
       ]);
 
       if (error) {

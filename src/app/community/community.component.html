@@ -1,1 +1,11 @@
-<p>community works!</p>
+<div *ngIf="allQuotes.length > 0; else noQuotes">
+    <div class="quote-container" *ngFor="let quote of allQuotes; let i = index" id="{{i}}">
+    <p class="quote-container_description">"{{quote.Description}}"</p>
+    <b><p class="quote-container_author">- {{quote.Author}}</p></b>
+    </div>
+</div>
+
+<ng-template #noQuotes>
+    <p class="advice" *ngIf="!loading">No quotes saved yet</p>
+        <div class="advice"  *ngIf="loading">Loading...</div>
+</ng-template>

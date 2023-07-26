@@ -11,13 +11,38 @@
     <div class="form-row align-items-center">
       <div class="col-auto">
         <label class="sr-only" for="inlineFormInput">Author</label>
-        <input formControlName="Author" type="text" class="form-control mb-2 font-family" id="inlineFormInput" placeholder="Anonymous" [(ngModel)]="dataQuote.Author">
+        <input formControlName="Author" type="text" class="form-control mb-2 font-family popup-container-Author" id="inlineFormInput" placeholder="Anonymous" [(ngModel)]="dataQuote.Author">
       </div>
 
       <div class="col-auto">
+        <label class="popup-container_colorLabel font-family" for="colorPicker">Choose a color:</label>        
+        <div class="color-picker">
+          <div
+            class="color"
+            *ngFor="let color of colors"
+            [style.background-color]="color"
+            [ngClass]="{ 'selected': color === selectedColor }"
+            (click)="setColor(color)"
+            [attr.data-color]="color"
+          ></div> 
+        </div>
       </div>
+      
+      
+      
+
+
+
+
+
+
+
+
+
+
+
       <div class="col-auto">  
-        <button type="submit" class="btn btn-success mb-2 button">{{dataQuote.button}}</button>
+        <button  type="submit" class="btn btn-success mb-2 button">{{dataQuote.button}}</button>
       </div>
     </div>
   </form>

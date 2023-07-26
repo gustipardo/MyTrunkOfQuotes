@@ -1,0 +1,39 @@
+.quote-container{
+    position: relative;
+    margin: 50px;
+    background-color: beige;
+    border-radius: 30px;
+    width: auto;
+    max-width: 500px;
+    display: inline-flex;
+    flex-direction: column;
+    padding: 20px;
+    font-size: 22px;
+    padding: 38px;
+    transition: height 0.3s ease;
+    font-family: "Merriweather", "Georgia", serif
+}
+
+.quote-container_description{
+    display: block;   
+    line-height: 40px;
+}
+
+.quote-container_author{
+    text-align: right;
+    margin-right: 50px;
+    font-size: 18px;
+    line-height: 40px;
+}
+
+.advice{
+    font-size: 32px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    line-height: 50px;
+    color: #155724;
+    font-family: "Merriweather", "Georgia", serif;
+}

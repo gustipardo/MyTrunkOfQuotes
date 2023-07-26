@@ -1,7 +1,7 @@
 .quote-container{
     position: relative;
     margin: 50px;
-    background-color: beige;
+    background-color: #F3E5AB;
     border-radius: 30px;
     width: auto;
     max-width: 500px;
@@ -43,14 +43,12 @@
 
 .quote-container_description{
     display: block;   
-    user-select: none; 
     line-height: 40px;
 }
 
 .quote-container_author{
     text-align: right;
     margin-right: 50px;
-    user-select: none;
     font-size: 18px;
     line-height: 40px;
 }

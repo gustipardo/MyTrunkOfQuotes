@@ -7,7 +7,7 @@
 </button>
 
 <div *ngIf="quotes.length > 0; else noQuotes">
-    <div class="quote-container" *ngFor="let quote of quotes; let i = index" id="{{i}}">
+    <div class="quote-container" *ngFor="let quote of quotes; let i = index" id="{{i}}" [style.backgroundColor]="quote.Color">
 
     <p class="quote-container_description">"{{quote.Description}}"</p>
     <b><p class="quote-container_author">- {{quote.Author}}</p></b>
