@@ -1,0 +1,35 @@
+
+<app-new-quote *ngIf="dataQuote.newQuote" (updateComponent)="updateComponent()"></app-new-quote>
+
+<button mat-stroked-button class="newquote" (click)="dataQuote.newQuote = true">
+    <mat-icon class="newquote-add">add</mat-icon>
+        <span class="newquote-span">New Quote</span>
+</button>
+
+<div *ngIf="quotes.length > 0; else noQuotes">
+    <div class="quote-container" *ngFor="let quote of quotes; let i = index" id="{{i}}">
+
+    <p class="quote-container_description">"{{quote.Description}}"</p>
+    <b><p class="quote-container_author">- {{quote.Author}}</p></b>
+
+    <button mat-icon-button [matMenuTriggerFor]="menu" class="quote-container_menu">
+        <mat-icon>more_vert</mat-icon>
+    </button>
+    <mat-menu #menu="matMenu">
+    <button mat-menu-item (click)="editQuote(i)">
+        <mat-icon>mode_edit</mat-icon>
+        <span>Edit</span>
+    </button>
+    <button mat-menu-item (click)="deleteQuote(i)" class="quote-container_menu_delete">
+        <mat-icon class="quote-container_menu_delete_icon">delete_outline</mat-icon>
+        <span class="quote-container_menu_delete_span">Delete</span>
+    </button>
+    </mat-menu>
+
+    </div>
+</div>
+
+<ng-template #noQuotes>
+    <p class="advice" *ngIf="!loading">No quotes saved yet<br>Add new quotes!</p>
+        <div class="advice"  *ngIf="loading">Loading...</div>
+</ng-template>
