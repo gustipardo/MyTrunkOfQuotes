@@ -20,7 +20,7 @@
         </li>
       </ul>
     </div>
-    <button class="btn btn-outline-danger my-2 my-sm-0 logout" type="submit" style="margin-right: 30px;" (click)="signOut()">
+    <button *ngIf="session" class="btn btn-outline-danger my-2 my-sm-0 logout" type="submit" style="margin-right: 30px;" (click)="signOut()">
       <span class="logout-span">Log Out</span>
       <mat-icon class="logout-icon">exit_to_app</mat-icon>
       

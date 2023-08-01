@@ -20,10 +20,10 @@ export class QuotesComponent {
   }
 
   async ngOnInit(): Promise<void> {
-    this.supabase.authChanges((_, session) => (this.session = session))
+    this.supabase.authChanges((_, session) => (this.session = session));
+    this.session = this.supabase.session;
     await this.getQuotes();
   }
-
   
   async deleteQuote(index:number){
     try{
@@ -60,6 +60,8 @@ export class QuotesComponent {
 
   async getQuotes() {
     try {
+      console.log("session "+this.session);
+      console.log("Quotes"+this.quotes);
       this.loading = true;
       if (this.session) { 
         const { user } = this.session;

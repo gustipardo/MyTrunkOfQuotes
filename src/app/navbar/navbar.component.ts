@@ -7,6 +7,7 @@ import { SupabaseService } from '../supabase.service';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent {
+  session = this.supabase.session
   constructor(private supabase:SupabaseService){
     
   }

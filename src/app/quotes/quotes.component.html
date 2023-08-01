@@ -31,6 +31,7 @@
 </div>
 
 <ng-template #noQuotes>
+    <button (click)="getQuotes()">get</button>
     <p class="advice" *ngIf="!loading">No quotes saved yet<br>Add new quotes!</p>
         <div class="advice"  *ngIf="loading">Loading...</div>
 </ng-template>
